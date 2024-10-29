@@ -1,1 +1,797 @@
+/* Global Styles */
+body {
+    margin: 0; /* Reset body margin */
+    padding: 0; /* Reset body padding */
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
+/* Navbar */
+.navbar {
+    background: linear-gradient(to right, #FF1493, #4169E1, #00CED1); /* Warna gradasi navbar */
+    border-bottom: 1px solid rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    color: #414141 !important; /* Default link color */
+    transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+/* Change color on hover and focus */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #ffffff !important; /* Change color when hovered or focused */
+}
+
+/* Change color when the link is active (when clicked) */
+.navbar-nav .nav-link.active {
+    color: #ffffff !important; /* Keep white color when the link is active */
+}
+
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 4rem 0;
+}
+
+/* Profile Image Container */
+.profile-img-container {
+    position: relative;
+    display: inline-block;
+    margin: 2rem 0;
+}
+
+/* Decorative elements around image */
+.profile-img-container::before,
+.profile-img-container::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.profile-img-container::before {
+    background: linear-gradient(45deg, #FF1493, #4169E1);
+    top: -10px;
+    left: -10px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.profile-img-container::after {
+    background: linear-gradient(45deg, #4169E1, #00CED1);
+    bottom: -10px;
+    right: -10px;
+    animation: float 6s ease-in-out infinite reverse;
+}
+
+/* Floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+
+/* Profile Image */
+.profile-img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    position: relative;
+    z-index: 1;
+    background: white;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* Dots decoration */
+.dots-decoration {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: radial-gradient(circle, #FF1493 2px, transparent 3px);
+    background-size: 15px 15px;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.dots-top-right {
+    top: -20px;
+    right: -20px;
+    transform: rotate(15deg);
+}
+
+.dots-bottom-left {
+    bottom: -20px;
+    left: -20px;
+    transform: rotate(-15deg);
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(45deg, #FF1493, #4169E1, #00CED1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    font-weight: 800;
+    animation: gradient 5s ease infinite;
+}
+
+/* Text Styles */
+.description {
+    text-align: justify;
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 2rem auto;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.skills-container {
+    margin: 2rem 0;
+}
+
+/* Skill Buttons */
+.skill-button {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    margin: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 147, 176, 0.3);
+    animation: buttonGlow 1.5s infinite;
+}
+
+/* Button Glow Animation */
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(33, 147, 176, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(33, 147, 176, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(33, 147, 176, 0.3);
+    }
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Footer */
+/* Footer Styling for Consistent Height */
+.footer {
+    background: linear-gradient(to right, #FF1493, #4169E1, #00CED1);
+    color: white;
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    height: 60px; /* Set a consistent height */
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    width: 100%; /* Ensure full width */
+    box-sizing: border-box; /* Include padding and border in height */
+}
+
+.footer p {
+    margin: 0; /* Reset margins */
+    text-align: center; /* Center text alignment */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gradient-text {
+        font-size: 2.5rem;
+    }
+
+    .profile-img {
+        max-width: 80%;
+    }
+
+    .profile-img-container {
+        margin: 1rem 0;
+    }
+
+    .description {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .skill-button {
+        padding: 6px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* About Me Page Styles */
+.main-content {
+    padding: 2rem; /* Memberikan padding ekstra */
+}
+
+.description {
+    font-size: 1.2rem; /* Ukuran font yang lebih besar untuk deskripsi */
+    line-height: 1.6; /* Jarak antar baris */
+    color: #555; /* Warna teks */
+    max-width: 800px; /* Lebar maksimum untuk konten */
+    margin: 0 auto; /* Tengah secara horizontal */
+    padding: 1rem; /* Padding dalam deskripsi */
+    text-align: justify; /* Justifikasi teks */
+}
+
+h1.display-4 {
+    background: linear-gradient(to right, #FF1493, #4169E1, #00CED1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 2rem; /* Jarak bawah untuk judul */
+    font-weight: bold; /* Ketebalan font */    
+}
+
+/* Carousel Styles */
+.carousel {
+    width: 100%; /* Lebar carousel */
+    overflow: hidden; /* Sembunyikan overflow */
+}
+
+.carousel-item {
+    display: flex; /* Flexbox untuk mengatur gambar */
+    justify-content: center; /* Pusatkan gambar */
+    align-items: center; /* Vertikal center */
+    height: 100px; /* Tinggi tetap untuk gambar */
+}
+
+.carousel-item img {
+    max-height: 100%; /* Pastikan gambar tidak melebihi tinggi item */
+    max-width: 80px; /* Lebar gambar dibatasi */
+    object-fit: cover; /* Memastikan gambar di-crop dengan baik */
+    margin: 0 10px; /* Jarak antar gambar */
+}
+
+/* Scroll Left Styles */
+.scroll-left {
+    height: 240px; /* Tinggi untuk menampung gambar yang lebih besar */
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 40px; /* Jarak antara gambar dan footer */
+}
+
+.scroll-left .inner {
+    position: absolute;
+    width: calc(200% + 160px); /* Lebar untuk menampung gambar setengah di pinggir */
+    height: 100%;
+    margin: 0;
+    line-height: 240px; /* Sesuaikan dengan tinggi */
+    text-align: center;
+    transform: translateX(0%); /* Mulai dari posisi normal */
+    animation: scroll-left 15s linear infinite; /* Mengatur animasi */
+    z-index: 2; /* Mengatur z-index agar gambar berada di atas */
+}
+
+.scroll-left img {
+    width: 240px; /* Lebar gambar dua kali lipat */
+    height: 240px; /* Tinggi gambar dua kali lipat */
+    border-radius: 20px; /* Sudut rounded */
+    object-fit: cover; /* Memastikan gambar di-crop dengan baik */
+    margin: 0 10px; /* Jarak antar gambar */
+    transition: transform 0.3s ease; /* Transisi untuk efek */
+}
+
+/* Hover effect tanpa shadow */
+.scroll-left img:hover {
+    transform: scale(1.1); /* Membesar gambar saat di-hover */
+}
+
+/* Move it (define the animation) */
+@keyframes scroll-left {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); } /* Menggerakkan hingga setengah dari total lebar */
+}
+
+/* Blockquote Styles */
+blockquote {
+    color: #2193b0; /* Mengubah warna quote menjadi biru */
+    font-style: italic; /* Mengubah gaya font menjadi italic jika diinginkan */
+    margin: 1rem 0; /* Jarak atas dan bawah untuk blockquote */
+}
+
+/* Tooltip Styles */
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+/* Skills Section Styles */
+.skill-button {
+    background-color: #45b3c7;
+    color: white;
+    width: 100%;
+    min-height: 120px;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Skill Title */
+.skill-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    transition: margin 0.3s ease;
+}
+
+/* Skill Description */
+.skill-description {
+    font-size: 1rem;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 0 15px;
+}
+
+/* Hover Effects */
+.skill-button:hover {
+    background-color: #5bc0d3;
+}
+
+.skill-button:hover .skill-description {
+    opacity: 1;
+    max-height: 100px;
+    margin-top: 10px;
+}
+
+/* Container for Skills */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skill-button {
+        min-height: 100px;
+    }
+    
+    .skill-title {
+        font-size: 1.2rem;
+    }
+    
+    .skill-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* Button Styles */
+.btn-skill {
+    background-color: #2193b0; /* Default background color */
+    color: white;
+    padding: 20px; /* Padding for button */
+    border-radius: 25px; /* Rounded corners */
+    margin: 10px; /* Margin around buttons */
+    font-weight: 500; /* Font weight */
+    letter-spacing: 0.5px; /* Letter spacing */
+    border: none; /* No border */
+    cursor: pointer; /* Show pointer cursor */
+    position: relative; /* For tooltip positioning */
+    transition: background 0.3s ease; /* Transition for background */
+    width: 100%; /* Full width to ensure same size */
+    height: 100px; /* Height to ensure consistency */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack title and tooltip */
+    justify-content: center; /* Center content vertically */
+}
+
+/* Hover effect */
+.btn-skill:hover {
+    background-color: #6dd5ed; /* Change background on hover */
+}
+
+/* Skill Button untuk Skills Page */
+.skills-skill-button {
+    background-color: #45b3c7; /* Button background color */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    position: relative; /* Position relative for absolute positioning of children */
+    height: 120px; /* Fixed height for uniformity */
+    overflow: hidden; /* Ensure overflow is hidden */
+    display: flex; /* Use flexbox to center content */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.skill-title,
+.skill-description {
+    position: absolute; /* Absolute positioning */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+    text-align: center; /* Center text alignment */
+    width: 100%; /* Full width */
+    
+}
+
+.skill-title {
+    opacity: 1; /* Initially visible */
+    
+}
+
+.skill-description {
+    opacity: 0; /* Initially hidden */
+    
+}
+
+/* Show description and hide title on hover */
+.skills-skill-button:hover .skill-title {
+    opacity: 0; /* Fade out title */
+}
+
+.skills-skill-button:hover .skill-description {
+    opacity: 1; /* Fade in description */
+    max-height: 100px;
+    margin-top: 10px;
+}
+
+.skills-skill-button:hover {
+    background: linear-gradient(to right, #00CED1, #FF1493, #4169E1); /* Change gradient on hover */
+}
+/* Skill Button untuk Home */
+.home-skill-button {
+    background: linear-gradient(45deg, #2193b0, #6dd5ed);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    margin: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.home-skill-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(33, 147, 176, 0.3);
+    animation: buttonGlow 1.5s infinite;
+}
+
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(33, 147, 176, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(33, 147, 176, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(33, 147, 176, 0.3);
+    }
+}
+
+/* Project Card Styling with Gradient and Hover Effects */
+.project-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #e2e6f3 100%);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+    position: relative;
+    width: 100%; /* Allow the card to take full width */
+    
+}
+
+/* Border with Gradient Animation */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #f9c0de, #93a2d1, #92c8c9, #f8b3d8);
+    border-radius: 17px;
+    z-index: -1;
+    opacity: 0; /* Default tidak terlihat */
+    transition: opacity 0.3s ease;
+}
+
+/* Hover effect for scaling and continuous animation */
+.project-card:hover {
+    transform: scale(1.02); /* Sedikit memperbesar */
+    animation: pulseShadow 1.5s infinite ease-in-out;
+}
+
+.project-card:hover::before {
+    opacity: 1; /* Border gradien muncul saat hover */
+    animation: gradientBorder 3s infinite linear; /* Animasi gradien berulang */
+}
+
+/* Title Styling with Consistent Spacing */
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Paragraph Styling in Project Info */
+.project-info {
+    padding: 20px;
+}
+
+.project-info p {
+    margin-bottom: 1rem;
+}
+
+/* Placeholder for Project Images */
+.project-image {
+    background-color: #2c2f33;
+    border-radius: 0 15px 15px 0;
+    text-align: center;
+    font-size: 1.2rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0 15px 15px 0;
+    animation: zoomImage 5s infinite alternate; /* Animasi zoom berulang */
+}
+
+/* Keyframes for Pulse Shadow */
+@keyframes pulseShadow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* Keyframes for Gradient Border Animation */
+@keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Keyframes for Image Zoom Animation */
+@keyframes zoomImage {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+        border-radius: 15px;
+    }
+
+    .project-image {
+        border-radius: 0 0 15px 15px;
+    }
+
+    .gradient-text {
+        font-size: 2.5rem;
+    }
+
+    .profile-img {
+        max-width: 80%;
+    }
+
+    .profile-img-container {
+        margin: 1rem 0;
+    }
+
+    .description {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    .skill-button {
+        padding: 6px 16px;
+        font-size: 0.9rem;
+    }
+
+    .contact-info h2 {
+        font-size: 1.5rem; /* Smaller heading on mobile */
+    }
+
+    .contact-info p {
+        font-size: 1rem; /* Smaller text on mobile */
+    }
+
+    .form-control {
+        padding: 10px; /* Increased padding for mobile */
+    }
+
+    .btn-submit {
+        padding: 10px; /* Ensure consistent button size */
+    }
+
+    .skill-button {
+        min-height: 100px; /* Minimum height for skill buttons */
+    }
+}
+
+
+.contact-container {
+    max-width: 800px;
+    margin-top: 2rem;
+    flex: 1;
+}
+
+/* Contact Form Section */
+.contact-form-section {
+    text-align: center;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+.contact-form-section h1 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+.contact-form-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+.form-floating {
+    margin-bottom: 1rem;
+}
+/* Submit Button - Match Footer/Navbar Gradient */
+.btn-submit {
+    background: linear-gradient(to right, #FF1493, #4169E1, #00CED1); /* Same gradient as footer/navbar */
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: linear-gradient(to right, #FF1493, #4169E1, #00CED1); /* Keep gradient on hover */
+    opacity: 0.6; /* Slightly dim for hover effect */
+}
+
+
+/* Contact Info Section */
+.contact-info-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 0rem 0;
+    text-align: center;
+    color: #333;
+}
+.contact-info-item {
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+.contact-info-item i {
+    font-size: 2rem;
+    background: linear-gradient(to right, #FF1493, #4169E1, #00CED1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+.contact-info-item p, .contact-info-item a {
+    font-size: 0.95rem;
+    color: #666;
+    text-decoration: none;
+}
+.contact-info-item a:hover {
+    color: #00ced1;
+    text-decoration: underline;
+}
+
+/* Instagram-specific styling */
+.contact-info-item a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-info-item a[title="Instagram"] i {
+    margin-bottom: 8px; /* Adjust spacing to align Instagram text */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-info-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Custom styles for modal */
+.modal-content {
+    border-radius: 15px;
+    background: white; /* Gradient background */
+}
+.btn-gradient {
+    background: linear-gradient(to right, #FF1493, #4169E1, #00CED1); /* Same gradient as footer/navbar */
+    color: white;
+    padding: 10px 40px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(to right, #FF1493, #4169E1, #00CED1); /* Keep gradient on hover */
+    opacity: 0.6; /* Slightly dim for hover effect */
+}
